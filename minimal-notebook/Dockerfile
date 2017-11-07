@@ -3,28 +3,31 @@
 
 FROM jupyter/base-notebook
 
-MAINTAINER Jupyter Project <jupyter@googlegroups.com>
+LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 
 USER root
 
 # Install all OS dependencies for fully functional notebook server
 RUN apt-get update && apt-get install -yq --no-install-recommends \
-    git \
-    vim \
-    jed \
-    emacs \
     build-essential \
-    python-dev \
-    unzip \
+    emacs \
+    git \
+    inkscape \
+    jed \
     libsm6 \
+    libxext-dev \
+    libxrender1 \
+    lmodern \
     pandoc \
-    texlive-latex-base \
-    texlive-latex-extra \
+    python-dev \
     texlive-fonts-extra \
     texlive-fonts-recommended \
     texlive-generic-recommended \
-    libxrender1 \
-    inkscape \
+    texlive-latex-base \
+    texlive-latex-extra \
+    texlive-xetex \
+    vim \
+    unzip \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
